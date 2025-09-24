@@ -1,5 +1,44 @@
 // MAIN CODE
-console.log(isPalindroma(""))
+console.log("PALINDROMA: ", isPalindroma("Anna"));
+
+// Pari e Dispari
+/**
+ * l'utente deve inserire un numero da 1 a 6
+ * l'utente deve scegliere tra Pari e Dispari
+ * il computer deve generare un numero random da 1 a 6
+ * si esegue la somma e si controlla se questa è Pari o dispari
+ * SE (SceltaUtente === isEvenOdd)
+ *  l'utente ha vinto
+ * ELSE
+ *  l'utente ha perso
+ */
+
+const userNumberString = prompt("Inserisci un numero tra 1 e 6");
+if (!userNumberString) {
+    console.error("Input non valido. Ricarica la pagina");
+} else {
+    const userNumber = parseInt(userNumberString);
+    if (userNumber > 0 && userNumber <= 6) {
+        const userChoise = prompt("Scommetti: scegli tra PARI e DISPARI");
+        const randomChoise = generateRandomNumber(1, 6);
+        console.log("randomChoise", randomChoise);
+        const sum = userNumber + randomChoise;
+        const checkSumEvenOdd = evenOdd(sum);
+
+        let message = `${userNumber}+${randomChoise} = ${sum}: è ${checkSumEvenOdd} - userChoise = ${userChoise}: `;
+        if (checkSumEvenOdd[0] === userChoise[0].toUpperCase()) {
+            message += `Hai vinto!!!🥳🥳`;
+        } else {
+            message += `Hai Preso!😭`;
+        }
+        console.log(message);
+    } else if (userNumber <= 0) {
+        console.error("valore troppo piccolo");
+    } else if (userNumber > 6) {
+        console.error("valore troppo grande");
+    }
+}
+
 
 // FUNCTIONS DEFINITION
 /**
@@ -17,7 +56,7 @@ function generateRandomNumber(min, max) {
 }
 
 /**
- * Descrizione: funzione che definisce se il numero è pari o dispari
+ * Descrizione: funzione che definisce se il numero è pari
  * author: Olga Demina
  * 
  * @param {number} numberToCheck
@@ -28,6 +67,23 @@ function isEven(numberToCheck) {
     const result = numberToCheck % 2 === 0;
     return result;
 }
+
+// Prendo un numero, controllo se pari, in base al risultato restituisco una stringa PARI/DISPARI
+/**
+ * Descrizione: funzione che definisce se il numero è pari o dispari.
+ * 
+ * @param {number} numberToCheck
+ * @returns {string} "PARI" se numero è pari, "DISPARI" altrimenti
+ */
+
+function evenOdd(numberToCheck) {
+    let checkEvenOdd = "DISPARI";
+    if (numberToCheck % 2 === 0) {
+        checkEvenOdd = "PARI";
+    }
+    return checkEvenOdd;
+}
+
 
 /**
  * descrizione: funzione che verifica se una parola è palindroma.
