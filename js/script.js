@@ -30,7 +30,7 @@ function isEven(numberToCheck) {
 }
 
 /**
- * descrizione: funzione che verifica se una parola è palindroma
+ * descrizione: funzione che verifica se una parola è palindroma.
  * 
  * @param {string} wordToCheck
  * @returns {boolean} true se palindroma, false altrimenti
