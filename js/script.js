@@ -7,7 +7,7 @@ console.log("PALINDROMA: ", isPalindroma("Anna"));
  * l'utente deve scegliere tra Pari e Dispari
  * il computer deve generare un numero random da 1 a 6
  * si esegue la somma e si controlla se questa è Pari o dispari
- * SE (SceltaUtente === isEvenOdd)
+ * SE (SceltaUtente === EvenOdd() )
  *  l'utente ha vinto
  * ELSE
  *  l'utente ha perso
@@ -19,7 +19,7 @@ if (!userNumberString) {
 } else {
     const userNumber = parseInt(userNumberString);
     if (userNumber > 0 && userNumber <= 6) {
-        const userChoise = prompt("Scommetti: scegli tra PARI e DISPARI");
+        const userChoise = prompt("Scommetti: scegli tra (P)ARI e (D)ISPARI");
         const randomChoise = generateRandomNumber(1, 6);
         console.log("randomChoise", randomChoise);
         const sum = userNumber + randomChoise;
