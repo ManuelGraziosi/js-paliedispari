@@ -1,5 +1,5 @@
 // MAIN CODE
-console.log("PALINDROMA: ", isPalindroma("Anna"));
+console.log("PALINDROMA: ", isPalindrom("Anna"));
 
 // Pari e Dispari
 /**
@@ -91,15 +91,15 @@ function evenOdd(numberToCheck) {
  * @param {string} wordToCheck
  * @returns {boolean} true se palindroma, false altrimenti
  */
-function isPalindroma(wordToCheck) {
-    let isPalindromaCheck = true;
+function isPalindrom(wordToCheck) {
+    let isPalindromCheck = true;
     const wordToCheckManaged = wordToCheck.toLowerCase();
-    for (let i = 0; i < Math.round(wordToCheckManaged.length / 2) && isPalindromaCheck; i++) {
-        curLeftChar = wordToCheckManaged[i];
-        curRightChar = wordToCheckManaged[(wordToCheckManaged.length - 1) - i];
+    for (let i = 0; i < Math.floor(wordToCheckManaged.length / 2) && isPalindromCheck; i++) {
+        const curLeftChar = wordToCheckManaged[i];
+        const curRightChar = wordToCheckManaged[(wordToCheckManaged.length - 1) - i];
         if (curLeftChar !== curRightChar) {
-            isPalindromaCheck = false;
+            isPalindromCheck = false;
         }
     }
-    return isPalindromaCheck;
+    return isPalindromCheck;
 }
